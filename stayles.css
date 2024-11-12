@@ -1,0 +1,77 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Map positioned in bottom-left corner */
+.map-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Panorama viewer takes up full space */
+#panorama-viewer {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Arrows for navigation */
+.arrow {
+    position: fixed; /* Fix the position relative to the viewport */
+    top: 50%;
+    transform: translateY(-50%); /* Center the arrows vertically */
+    font-size: 3rem;
+    color: white;
+    z-index: 200;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    left: 20px; /* Fix to the left side */
+}
+
+.right-arrow {
+    right: 20px; /* Fix to the right side */
+}
+
+/* Fullscreen Button */
+#fullscreen-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    z-index: 300;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#fullscreen-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Fullscreen map toggle */
+.fullscreen-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+}
