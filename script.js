@@ -24,10 +24,10 @@ function addArrowInfospot(panorama, azimuthAngle, targetPanorama) {
 }
 
 // Right view arrow (90°) and Left view arrow (180°) setup
-addArrowInfospot(panorama1, 270, panorama2);    // Right view arrow at 90° (to panorama2)
-addArrowInfospot(panorama2, 270, panorama1);   // Left view arrow at 180° (back to panorama1)
-
-addArrowInfospot(panorama2, 90, panorama1);    // Right view arrow at 90° (to panorama3)
+addArrowInfospot(panorama1, 270, panorama2);    // Right view arrow at 270 (to panorama2)
+addArrowInfospot(panorama1, 90, panorama2);    // Right view arrow at 90 (to panorama2)
+addArrowInfospot(panorama2, 270, panorama1);   // Left view arrow at 279 (back to panorama1)
+addArrowInfospot(panorama2, 90, panorama1);    // Right view arrow at 90 (to panorama3)
 
 // Map click to show full screen map
 document.getElementById('map-image').addEventListener('click', () => {
