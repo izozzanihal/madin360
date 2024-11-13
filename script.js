@@ -1,40 +1,33 @@
-// Create Panolens viewer
+// Initialize the Panolens viewer
 const viewer = new PANOLENS.Viewer({
     container: document.getElementById('panorama-viewer'),
     autoHideInfospot: false,
+    controlBar: true
 });
 
-// Create Panorama Images
-const panoImage1 = new PANOLENS.ImagePanorama('zeroth/images/image1.jpg');
-const panoImage2 = new PANOLENS.ImagePanorama('zeroth/images/image2.jpg');
-const panoImage3 = new PANOLENS.ImagePanorama('image3.jpg');
+// Load your custom 360 images (ensure paths to images are correct)
+const panorama1 = new PANOLENS.ImagePanorama('zeroth/images/image1.jpg');
+const panorama2 = new PANOLENS.ImagePanorama('zeroth/images/image2.jpg');
 
-// Add Panoramas to Viewer
-viewer.add(panoImage1, panoImage2, panoImage3);
 
-// Current image index (1 = panoImage1, 2 = panoImage2, etc.)
-let currentImage = 1;
+// Add each panorama to the viewer
+viewer.add(panorama1, panorama2);
 
-// Arrow button navigation
-document.getElementById('left-arrow').addEventListener('click', () => {
-    if (currentImage === 2) {
-        viewer.setPanorama(panoImage1);
-        currentImage = 1;
-    } else if (currentImage === 3) {
-        viewer.setPanorama(panoImage2);
-        currentImage = 2;
-    }
-});
+// Function to add an infospot at a specific azimuth (horizontal angle)
+function addArrowInfospot(panorama, azimuthAngle, targetPanorama) {
+    const infospot = new PANOLENS.Infospot(300, 'zeroth/images/arrowfront.png'); // Adjust arrow icon path
+    infospot.position.setFromSphericalCoords(5000, Math.PI / 2, azimuthAngle * (Math.PI / 180)); // Math.PI / 2 places it horizontally
+    infospot.addEventListener('click', () => {
+        viewer.setPanorama(targetPanorama);
+    });
+    panorama.add(infospot);
+}
 
-document.getElementById('right-arrow').addEventListener('click', () => {
-    if (currentImage === 1) {
-        viewer.setPanorama(panoImage2);
-        currentImage = 2;
-    } else if (currentImage === 2) {
-        viewer.setPanorama(panoImage3);
-        currentImage = 3;
-    }
-});
+// Right view arrow (90°) and Left view arrow (180°) setup
+addArrowInfospot(panorama1, 270, panorama2);    // Right view arrow at 90° (to panorama2)
+addArrowInfospot(panorama2, 270, panorama1);   // Left view arrow at 180° (back to panorama1)
+
+addArrowInfospot(panorama2, 90, panorama1);    // Right view arrow at 90° (to panorama3)
 
 // Map click to show full screen map
 document.getElementById('map-image').addEventListener('click', () => {

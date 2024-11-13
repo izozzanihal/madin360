@@ -26,28 +26,8 @@
 #panorama-viewer {
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
-
-/* Arrows for navigation */
-.arrow {
-    position: fixed; /* Fix the position relative to the viewport */
-    top: 50%;
-    transform: translateY(-50%); /* Center the arrows vertically */
-    font-size: 3rem;
-    color: white;
-    z-index: 200;
-    cursor: pointer;
-    user-select: none;
-}
-
-.left-arrow {
-    left: 20px; /* Fix to the left side */
-}
-
-.right-arrow {
-    right: 20px; /* Fix to the right side */
-}
-
 /* Fullscreen Button */
 #fullscreen-btn {
     position: fixed;
