@@ -41,11 +41,9 @@ function addArrowInfospot(panorama, azimuthAngle, targetPanorama) {
 }
 
 // 360 image frentarrow to frent image
-
 addArrowInfospot(panorama1, 270, panorama2);    //image1 frent to image2
 addArrowInfospot(panorama1, 90, panorama18);     //image1 back to image6 
 addArrowInfospot(panorama1, 90, panorama18);     //image1 back to image6 
-
 
 addArrowInfospot(panorama2, 80, panorama1);     //image2 back to image1
 addArrowInfospot(panorama2, 270, panorama3);    //image2 frent to image3
@@ -98,12 +96,4 @@ addArrowInfospot(panorama17, 90, panorama16);     //image17 back to image16
 addArrowInfospot(panorama17, 270, panorama18);    //image17 frent to image18
 
 addArrowInfospot(panorama18, 90, panorama17);     //image18 back to image17
-addArrowInfospot(panorama18, 270, panorama1);    //image18 frent to image19
-
-
-//addArrowInfospot(panorama19, 90, panorama18);     //image19 back to image18
-//addArrowInfospot(panorama19, 270, panorama20);    //image19 frent to image20
-
-//addArrowInfospot(panorama20, 90, panorama19);     //image20 back to image19
-//addArrowInfospot(panorama20, 270, panorama1);    //image20 frent to image1
 
