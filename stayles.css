@@ -1,26 +1,52 @@
 /* Basic reset */
+
 * {
+    overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 /* Map positioned in bottom-left corner */
+/* Container for the map, positioned fixed at the bottom-left of the screen */
+/* Responsive map container, adjust based on screen size */
 .map-container {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 200px;
-    height: 200px;
+    bottom: 2%;
+    left: 2%;
+    width: 20vw;
+    height: 20vw;
     z-index: 100;
 }
 
-.map-container img {
+
+/* Image inside the container, fully responsive */
+.map-container img,
+.map-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+    display: block;
 }
+
+/* Media queries for different screen sizes */
+@media (max-width: 500px) {
+    .map-container {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media (max-width: 250px) {
+    .map-container {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+
 
 /* Panorama viewer takes up full space */
 #panorama-viewer {
@@ -54,4 +80,18 @@
     width: 100vw;
     height: 100vh;
     z-index: 500;
+}
+.arrow-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.arrow-button:hover {
+    color: red; /* Changes color when hovered */
+}
+.arrow-video {
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
