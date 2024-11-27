@@ -94,5 +94,5 @@ addArrowInfospot(panorama17, 90, panorama16);     //image17 back to image16
 addArrowInfospot(panorama17, 270, panorama18);    //image17 frent to image18
 
 addArrowInfospot(panorama18, 90, panorama17);     //image18 back to image17
-addArrowInfospot(panorama18, 90, panorama1);     //image1 back to image6 
+addArrowInfospot(panorama18, 270, panorama1);     //image18 back to image1 
 
