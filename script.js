@@ -24,11 +24,10 @@ const panorama15 = new PANOLENS.ImagePanorama('zeroth/images/360images/image15.j
 const panorama16 = new PANOLENS.ImagePanorama('zeroth/images/360images/image16.jpg');
 const panorama17 = new PANOLENS.ImagePanorama('zeroth/images/360images/image17.jpg');
 const panorama18 = new PANOLENS.ImagePanorama('zeroth/images/360images/image18.jpg');
-//const panorama19 = new PANOLENS.ImagePanorama('zeroth/images/360images/image19.jpg');
-//const panorama20 = new PANOLENS.ImagePanorama('zeroth/images/360images/image20.jpg');
 
 // Add each panorama to the viewer
-viewer.add(panorama1, panorama2,panorama3,panorama4,panorama5,panorama6,panorama7,panorama8,panorama9,panorama10,panorama11,panorama12,panorama13,panorama14,panorama15,panorama16,panorama17,panorama18);
+
+viewer.add(panorama1,panorama2,panorama3,panorama4,panorama5,panorama6,panorama7,panorama8,panorama9,panorama10,panorama11,panorama12,panorama13,panorama14,panorama15,panorama16,panorama17,panorama18);
 
 // Function to add an infospot at a specific azimuth (horizontal angle)
 function addArrowInfospot(panorama, azimuthAngle, targetPanorama) {
